@@ -1922,6 +1922,9 @@ li {
   background: #dd2727;
   margin: 0 auto;
 }
+.body_content .payment_text button.no-pay {
+  background: #b2b2b2;
+}
 .body_content {
   padding: 0.58666667rem 0rem 0rem 0rem;
 }

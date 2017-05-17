@@ -586,7 +586,12 @@ var js_ = {
 
                 var movieBox = [];
                 for (var i = 0; i < 3; i++) {
+                  if(i==1){
+                    movieBox.push('<div class="box d-b clear"><dl class="time d-b f-l"><dt>11:30</dt><dd>13:30</dd></dl><dl class="place d-b f-l ta-c"><dt>国语</dt><dd>3厅</dd></dl><div class="price d-b f-l ta-c">28 <span>元</span></div><div class="btnBuy d-b f-r ta-c none">已卖完</div></div>');
+                  }else{
                     movieBox.push('<div class="box d-b clear"><dl class="time d-b f-l"><dt>11:30</dt><dd>13:30</dd></dl><dl class="place d-b f-l ta-c"><dt>国语</dt><dd>3厅</dd></dl><div class="price d-b f-l ta-c">28 <span>元</span></div><div class="btnBuy d-b f-r ta-c">选座购票</div></div>');
+                  }
+
                 }
                 $('.html_body #buyTicketTime .sessionList').html(movieBox);
             }, 2000);
