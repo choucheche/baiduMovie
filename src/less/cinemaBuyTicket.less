@@ -1,0 +1,330 @@
+.html_body {
+    #cinemaBuyTicket {
+        .movieBanner {
+            width: 100%;
+            .h(358);
+            .p(30,30,30,30);
+            overflow: hidden;
+            z-index:10;
+            .movieImg {
+                .w(214);
+                .h(298);
+                .mr(30);
+            }
+
+            .blackBg {
+                width: 100%;
+                .h(358);
+                background: rgba(0,0,0,0.3);
+                left: 0;
+                top: 0;
+                z-index: -1;
+            }
+
+            .movieBg {
+                width: 100%;
+                .h(1074);
+                z-index: -2;
+                left: 0;
+                top: -77.777%;
+                filter: blur(20px);
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .rightInfo {
+                .w(446);
+
+                dl {
+                    width: 100%;
+
+                    dt {
+                        .l-h(40);
+                        .f-s(34);
+                        color: @defaultColor;
+                        .pb(24);
+                    }
+
+                    dd {
+                        .gradeBox {
+                            .w(120);
+                            .h(30);
+                            .p(4,0,6,0);
+
+                            .gradeNum {
+                                .h(20);
+                                background: url("../img/gradeStar2.png") no-repeat;
+                                .bg-s(120,20);
+                                left: 0;
+                                .t(4);
+                                z-index: 2;
+                            }
+
+                            .gradeBg {
+                                .w(120);
+                                .h(20);
+                                background: url("../img/gradeStar2Bg.png") no-repeat;
+                                .bg-s(120,20);
+                            }
+                        }
+
+                        .movieGrade {
+                            .f-s(28);
+                            .l-h(30);
+                            color: @orangeColor1;
+                            .ml(15);
+                        }
+                    }
+                }
+
+                ul {
+                    width: 100%;
+                    .pt(50);
+
+                    li {
+                        .f-s(28);
+                        .l-h(36);
+                        color: @defaultColor;
+                        opacity: 0.6;
+                        .pb(18);
+                    }
+                }
+            }
+        }
+        .shadow{
+          width:100%;
+          left:0;
+          .t(89);
+          background:rgba(0,0,0,0.8);
+          z-index:8;
+          height:100%;
+        }
+        .loadIcon{
+          .w(50);
+          .h(50);
+          z-index:12;
+          left:50%;
+          top:50%;
+          background:url('../img/load_gif.gif');
+          .bg-s(50,50);
+          transform: translate(-50%,-50%);
+        }
+        .fixBox{
+          width:100%;
+          left:0;
+          top:0;
+          z-index:10;
+        }
+        .dateChoose{
+          width:100%;
+          background:@bodyBgColor;
+          .h(100);
+          z-index:10;
+          border-bottom:1px @borderColor1 solid;
+          .swiper-container{
+            width:100%;
+            overflow-x: hidden;
+            .h(100);
+            .swiper-wrapper{
+              .p(0,0,0,30);
+              .h(100);
+            }
+            .swiper-slide{
+              .mr(32);
+              .w(190);
+              .h(100);
+              .l-h(99);
+              .f-s(30);
+              color:@textColor;
+              border-bottom:1px @borderColor1 solid;
+
+              &.active{
+                color:@redColor1;
+                border-bottom:1px @redColor1 solid;
+              }
+          }
+      }
+    }
+
+    .nav{
+      width:100%;
+      .h(100);
+      left:0;
+      .t(0);
+      z-index:10;
+      background:@bodyBgColor;
+      .pb(20);
+      .navBox{
+        width:33.333333%;
+        .h(80);
+        color:@textColor;
+        left:0;
+        top:0;
+        z-index:9;
+        background:@defaultColor;
+        .text{
+          width:100%;
+          .l-h(80);
+          .h(80);
+          .f-s(28);
+        }
+        .arrowsIcon{
+          .w(22);
+          .h(12);
+          .l(169);
+          .t(34);
+          background:url('../img/arrowsDown.png') no-repeat left top;
+          .bg-s(22,12);
+        }
+        &.active{
+          color:@redColor1;
+          .arrowsIcon{
+            background:url('../img/arrowsDownA.png') no-repeat left top;
+            .bg-s(22,12);
+          }
+        }
+      }
+
+    }
+
+    .listWrap{
+      z-index:7;
+      left:0;
+      .t(0);
+      .filmList{
+        width:100%;
+        background:@defaultColor;
+        .box{
+          .p(32,30,32,30);
+          border-bottom:1px @borderColor1 solid;
+          &:last-of-type{
+            border-bottom:none;
+          }
+          dl{
+            .leftBox{
+              .w(535);
+            }
+            .rightBox{
+              .w(155);
+            }
+            dt{
+              .l-h(38);
+              color:@textColor;
+              .leftBox{
+                .f-s(30);
+              }
+              .rightBox{
+                .f-s(24);
+                color:@placeholder;
+                span{
+                  .f-s(32);
+                  color:@redColor1;
+                }
+              }
+            }
+            dd{
+              .l-h(32);
+              .mt(16);
+              .f-s(24);
+              color:@placeholder;
+              .leftBox{
+                .pl(30);
+                background:url('../img/addressIcon.png') no-repeat;
+                .bg-p(0,2);
+                .bg-s(21,28);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .fixWrap{
+      width:100%;
+      left:0;
+      .t(100);
+      z-index:10;
+      .boxWrap{
+        width:100%;
+        .cityListWrap{
+          width:100%;
+        }
+        .boxList{
+          width:100%;
+          overflow-y: auto;
+          .box{
+            width:100%;
+            .p(25,30,25,30);
+            .f-s(30);
+            .l-h(38);
+            color:@textColor;
+            border-bottom:1px @borderColor1 solid;
+            background:@defaultColor;
+            &.active{
+              color:@redColor1;
+            }
+            .text{
+              .w(600);
+            }
+            .num{
+              .w(90);
+              color:@placeholder;
+            }
+            &:last-of-type{
+              border-bottom:none;
+            }
+            &:active{
+              opacity:0.8;
+            }
+          }
+        }
+        .cityNav{
+          width:100%;
+          .h(89);
+          background:@defaultColor;
+          .navBox{
+            width:50%;
+            .p(0,53,0,72);
+            .f-s(30);
+            .l-h(88);
+            .h(89);
+            color:@textColor;
+            border-bottom:1px @borderColor1 solid;
+            span{
+              width:100%;
+              .h(89);
+              .l-h(88);
+              border-bottom:1px @borderColor1 solid;
+            }
+            &.active{
+              span{
+                color:@redColor1;
+                border-bottom:1px @redColor1 solid;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .shadow{
+      width:100%;
+      left:0;
+      .t(89);
+      background:rgba(0,0,0,0.8);
+      z-index:8;
+      height:100%;
+    }
+    .loadIcon{
+      .w(50);
+      .h(50);
+      z-index:12;
+      left:50%;
+      top:50%;
+      background:url('../img/load_gif.gif');
+      .bg-s(50,50);
+      transform: translate(-50%,-50%);
+    }
+
+  }
+}

@@ -1,0 +1,132 @@
+
+.body_content{
+	.p(88,0,0,0);
+	.order_content.ticket_content{
+		ul{
+			.pt(30);
+			li h3{
+				.mb(10);
+			}
+			li p{
+			    .f-s(28);
+			    .l-h(42);
+			}
+			li i{
+				color:#3fb1f8;
+				display:block;
+				.f-s(30);
+				.pb(20);
+			}
+		}
+	}
+	.take_ticket{
+		background:#fff;
+		.p(50,20,50,20);
+		p{
+			.f-s(30);
+			span{
+				color:#b2b2b2;
+			}
+		}
+		img{
+			display:block;
+			.w(397);
+			.h(397);
+			margin:0 auto;
+			.mt(50);
+		}
+		strong{
+			.h(200);
+			.l-h(200);
+			.f-s(50);
+			font-weight:normal;
+		}
+	}
+	.film_address{
+		.mt(20);
+		.p(30,30,30,30);
+		background:#fff;
+		ul{
+			.m(0,0,0,0);
+			position:relative;
+		}
+		ul li{
+			float:left;
+			h3{
+				.f-s(30);
+				.l-h(34);
+				.mb(10);
+			}
+		}
+		ul li:nth-child(1){
+			.w(550);
+			.border-right(1,@placeholder);
+			i img{
+				.w(21);
+				.h(28);
+				color:#b2b2b2;
+				.mr(10);
+			}
+			i{
+				.f-s(22);
+				.l-h(26);
+			}
+			p{
+				color:#b2b2b2;
+				.f-s(22);
+				.l-h(26);
+			}
+		}
+		ul li:nth-child(2){
+			position:absolute;
+			top:50%;
+			right:0;
+			transform:translateY(-50%);
+			z-index:2;
+			.w(140);
+			a{
+				.w(140);
+				.h(70);
+				display:block;
+				background:url('../img/tel_phone.png') no-repeat;
+				.bg-s(36,36);
+				background-position: center center;
+			}
+			i img{
+				.w(50);
+				.h(50);
+				.mt(15);
+			}
+		}
+	}
+	.pay_amount{
+		.mt(20);
+		background:#fff;
+		.p(30,30,30,30);
+		.f-s(24);
+		.l-h(28);
+		h3{
+			.f-s(30);
+			.h(80);
+			.l-h(80);
+			span{
+				color:#df2725;
+			}
+		}
+		p{
+			span{
+				color:#000;
+			}
+			em{
+				display:inline-block;
+				.w(150);
+				color:#b2b2b2;
+			}
+			.h(50);
+			.l-h(50);
+		}
+	}
+	.foot_text{
+		.f-s(20);
+	}
+}

@@ -1,0 +1,195 @@
+
+.html_body {
+    #home {
+        .banner {
+            width: 100%;
+
+            .swiper-slide {
+                img {
+                    width: 100%;
+                    .h(280);
+                }
+            }
+
+            .swiper-container-horizontal > .swiper-pagination-bullets,
+            .swiper-pagination-custom,
+            .swiper-pagination-fraction {
+                .b(13);
+            }
+
+            .swiper-pagination-bullet {
+                background: @defaultColor;
+                opacity: 1;
+                .w(14);
+                .h(14);
+                .m(0,5,0,5);
+            }
+
+            .swiper-pagination-bullet-active {
+                background: @yellowColor1;
+            }
+        }
+        .movieList {
+            width: 100%;
+            background: @defaultColor;
+            .p(30,0,30,0);
+            .mb(20);
+
+            .swiper-container2 {
+                width: 100%;
+                overflow-x: hidden;
+
+                .swiper-wrapper {
+                    .p(0,0,0,30);
+                }
+
+                .swiper-slide {
+                    .mr(14);
+                    .w(214);
+
+                    &:last-of-type {
+                        .mr(28);
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+
+                    div {
+                        .w(58);
+                        .h(32);
+                        left: 0;
+                        top: 0;
+                        z-index: 2;
+
+                        &.new {
+                            background: @orangeColor1;
+                        }
+
+                        &.presell {
+                            background: @blueColor1;
+                        }
+
+                        span {
+                            transform: scale(0.85);
+                            .f-s(20);
+                            .l-h(36.1);
+                            color: #fff;
+                        }
+                    }
+
+                    dl {
+                        width: 100%;
+
+                        dt {
+                            font-weight: normal;
+                            .f-s(24);
+                            .l-h(32);
+                            color: @textColor;
+                            .p(22,0,6,0);
+                            font-weight: bold;
+                        }
+
+                        dd {
+                            .starBox {
+                                .w(88);
+                                .h(20);
+                                left: 0;
+                                .t(5);
+                                .mr(10);
+
+                                .bg {
+                                    .w(88);
+                                    .h(15);
+                                    background: url('../img/gradeStar.png') no-repeat;
+                                    .bg-s(88,15);
+                                    left: 0;
+                                    top: 0;
+                                    z-index: 3;
+                                }
+
+                                .num {
+                                    .h(15);
+                                    background: @orangeColor1;
+                                    left: 0;
+                                    top: 0;
+                                    z-index: 2;
+                                }
+
+                                .grayBg {
+                                    width: 100%;
+                                    .h(15);
+                                    background: @grayColor1;
+                                }
+                            }
+
+                            .gradeNum {
+                                color: @orangeColor1;
+                                .f-s(22);
+                                .l-h(26);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .moviePlace {
+            width: 100%;
+            background: @defaultColor;
+
+            .box {
+                width: 100%;
+                .p(35,30,35,30);
+                border-bottom: 1px @borderColor1 solid;
+
+                dl {
+                    .w(690);
+
+                    dt {
+                        .l-h(38);
+                        .f-s(30);
+                        color: @textColor;
+                        .pb(10);
+                    }
+
+                    dd {
+                        color: @placeholder;
+
+                        div {
+                            .f-s(24);
+                            .l-h(32);
+                            .pl(32);
+                            background: url('../img/addressIcon.png') no-repeat;
+                            .bg-p(0,2);
+                            .bg-s(21,28);
+                            .w(560);
+                        }
+
+                        span {
+                            .w(130);
+                            .f-s(24);
+                            .l-h(32);
+                        }
+                    }
+                }
+            }
+        }
+        .loadingIcon{
+          width:100%;
+          .h(60);
+          background:url('../img/load_gif.gif') no-repeat center center;
+          .bg-s(32,32);
+        }
+        .noThing{
+          width:100%;
+          .l-h(80);
+          .f-s(30);
+          color:@textColor;
+        }
+    }
+}
+#myModal .modal-dialog{
+  top:25%;
+  .m(0,30,0,30);
+}

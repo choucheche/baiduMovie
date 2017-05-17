@@ -1,0 +1,95 @@
+@import 'configuration.less'; // 转换大小
+@import 'property.less'; // 简写 class 样式
+@import 'variable.less'; // 设置变量
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    text-size-adjust: 100%;
+}
+
+html * {
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    /*禁止点击链接后，IOS出现背景色*/
+    text-size-adjust: 100%;
+    border:none;
+}
+
+body,
+html {
+    font-family: Microsoft YaHei,Helvetica Neue,Helvetica,Roboto,STHeiTi,Arial,sans-serif;
+    margin:0;
+    height:100%;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+    background:@bodyBgColor;
+    width:100%;
+}
+
+input,
+textarea {
+    -webkit-appearance: none;
+    /*消除输入框和按钮的原生外观*/
+}
+
+/*修改 input 的 placeholder 颜色*/
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+color: @placeholder;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+color: @placeholder;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+color: @placeholder;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+color: @placeholder;
+}
+
+a {
+    text-decoration: none;
+}
+a:focus{
+  outline:none;
+}
+a:focus, a:hover{
+  text-decoration: none;
+}
+
+dl{
+  margin-bottom:0;
+}
+dt{
+  font-weight: normal;
+}
+ul,ol,li{
+  list-style: none;
+}
+
+
+@import 'header.less'; // 头部
+@import 'footer.less'; // 头部
+@import 'public.less'; // 公用
+@import 'home.less'; // 首页
+@import 'selectCity.less'; // 选择城市
+@import 'movieDetails.less'; // 电影详情
+@import 'movieScreening.less'; // 影院列表，影院筛选
+@import 'cinemaBuyTicket.less'; // 选影院购票
+@import 'buyTicketTime.less'; // 选电影购票
+@import 'moviePhotos.less'; // 剧照
+@import 'cinemaMap.less'; // 影院地图
+@import 'film_order.less'; // 电影订单
+@import 'film_list.less'; // 电影列表
+@import 'payment_order.less'; // 确定支付
+@import 'c_ticket_details.less'; //电影票详情
+@import 'search_cinema.less'; //电影搜索
+@import 'rsearch_list.less'; //搜索页面
+@import 'seat_selection.less';//选座页面

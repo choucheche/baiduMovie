@@ -1,0 +1,76 @@
+
+#header{
+  .w(750);
+  .h(89);
+  .p(14,0,14,0);
+  background:@defaultColor;
+  position:fixed;
+  left:0;
+  top:0;
+  z-index:9999;
+  border-bottom:1px @borderColor1 solid;
+  &.gray_bg{
+    background:@headBgColor;
+  }
+  .linkBtn{
+    .w(102);
+    .h(60);
+    .closeBtn{
+      .w(32);
+      .h(60);
+      background:url('../img/header_close.png') no-repeat center center;
+      .bg-s(32,32);
+      .m(0,40,0,30);
+    }
+    .backBtn{
+      .w(32);
+      .h(60);
+      background:url('../img/header_back.png') no-repeat center center;
+      .bg-s(23,40);
+      .m(0,40,0,30);
+    }
+  }
+  .searchBox{
+    .w(450);
+    .h(60);
+    background:@defaultColor;
+    input{
+      background-color:@bodyBgColor;
+      .b-r(6);
+      .w(450);
+      .h(60);
+      .p(13,15,13,66);
+      .l-h(34);
+      background-image:url('../img/head_search.png');
+      .bg-p(20,17);
+      .bg-s(28,28);
+      background-repeat: no-repeat;
+      .f-s(26);
+      color:@textColor;
+    }
+  }
+  .cityBtn{
+    .w(128);
+    .h(60);
+    .m(0,30,0,40);
+    .cityName{
+      .w(128);
+      .pr(43);
+      .h(60);
+      .f-s(28);
+      .l-h(60);
+      background-image:url('../img/arrowsDown.png');
+      .bg-p(104,24);
+      .bg-s(22,12);
+      background-repeat: no-repeat;
+
+    }
+  }
+  .centerTitle{
+    .w(546);
+    .h(60);
+    .l-h(60);
+    .f-s(34);
+    color:@textColor;
+  }
+}

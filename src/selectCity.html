@@ -1,0 +1,88 @@
+@@include('./include/header.html')
+    <title>首页</title>
+    <link type='text/css' rel='stylesheet' href='css/index.css?rev=@@hash'>
+</head>
+
+<body>
+  <div class='html_body no_pb'>
+
+    <div id='header' class='d-b p-f gray_bg'>
+      <div class='linkBtn d-b f-l'>
+        <div class='closeBtn nd-b'></div>
+        <a class='backBtn d-b' href='javascript:history.back();'></a>
+      </div>
+      <div class='searchBox nd-b f-l'>
+        <input type='text' placeholder="搜索电影、影院">
+      </div>
+      <div class='cityBtn nd-b f-l'>
+        <div class="cityName text-h">
+          乌鲁木齐
+        </div>
+      </div>
+      <div class='centerTitle d-b f-l ta-c'>
+        选择城市
+      </div>
+    </div>
+
+    <!-- 如果用百度地图API，这个不能删 -->
+    <div id="baiduMap"></div>
+    <!-- 如果用百度地图API，这个不能删 结束 -->
+
+    <!-- demo 和 allmap 可以删 -->
+    <div id='demo'></div>
+    <!-- demo 这里显示手机 H5 的经纬度，需要在手机 http 开头的地址才能显示经纬度-->
+
+    <div id="allmap"></div>
+    <!--
+    allmap 这里显示百度地图 API 的经纬度
+    由手机 H5 的经纬度，用百度地图 API 计算偏移量，得到精确的经纬度，
+    注意：如果上面的 demo 没有显示经纬度值，那么百度地图的经纬度是不准的
+    -->
+
+    <!-- demo 和 allmap 可以删 结束-->
+
+    <div id='selectCity'>
+      <div class='nowCity'>
+        当前城市：<span id='thisCity'>北京</span>
+      </div>
+      <div class='locationBox'>
+        <div class='cityTitle'>定位城市</div>
+        <div class='locationCity d-ib' id='gpsCity'>北京</div>
+      </div>
+      <div class='cityList'>
+        <dl>
+          <dt>A</dt>
+          <dd>安吉市</dd>
+          <dd>安康市</dd>
+          <dd>安庆市</dd>
+          <dd>鞍山市</dd>
+        </dl>
+        <dl>
+          <dt>B</dt>
+          <dd>北京市</dd>
+          <dd>白城市</dd>
+          <dd>百色市</dd>
+          <dd>白沙县</dd>
+        </dl>
+        <dl>
+          <dt>C</dt>
+          <dd>成都市</dd>
+          <dd>重庆市</dd>
+          <dd>长沙市</dd>
+          <dd>长春县</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+
+@@include('./include/footer.html')
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DD279b2a90afdf0ae7a3796787a0742e"></script>
+    <script src='js/index.js?rev=@@hash'></script>
+    <script>
+      $(function(){
+        js_.selectCity();
+      });
+    </script>
+</body>
+</html>

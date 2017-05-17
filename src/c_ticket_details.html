@@ -1,0 +1,77 @@
+@@include('./include/header.html')
+    <title>首页</title>
+    <link type='text/css' rel='stylesheet' href='public/swiper/css/swiper.min.css?rev=@@hash'>
+    <link type='text/css' rel='stylesheet' href='css/index.css?rev=@@hash'>
+</head>
+<body>
+ <div class='body_content'>
+    <div id='header' class='d-b p-f gray_bg clearfix'>
+      <div class='linkBtn d-b f-l'>
+        <div class='closeBtn nd-b'></div>
+        <a href="#" class='backBtn d-b'></a>
+      </div>
+      <div class='searchBox nd-b f-l'>
+        <input type='text' placeholder="搜索电影、影院">
+      </div>
+      <div class='cityBtn nd-b f-l'>
+        <div class="cityName text-h">
+          乌鲁木齐
+        </div>
+      </div>
+      <div class='centerTitle d-b f-l ta-c'>
+        电影订单
+      </div>
+    </div>
+    <!-- 订单内容 -->
+    <div class="order_content ticket_content">
+       <ul>
+         <li class="d-ib f-l"><img src="img/filmPic.png" alt=""></li>
+         <li>
+           <h3>最终幻想 15：王者之剑</h3>
+           <i>2016-10-02 20:20-22:13 (国语 2D)</i>
+           <p>广州市飞扬影院(朝阳店) 朝阳1厅</p>
+           <p>普通区11排22座 普通区11排23座</p>
+         </li>
+       </ul>
+    </div>
+    <div class="take_ticket">
+       <p>取电影票<span>（在取票机输入取票码取电影票）</span></p>
+       <img src="img/take_ticket.png" alt="">
+       <strong class="d-b ta-c">4685 5896 8795 5236</strong>
+    </div>
+
+    <div class="film_address">
+       <ul class="clearfix">
+         <li>
+            <h3>万达国际影城（南海万达广场）</h3>
+            <p><i><img src="img/addressIcon.png" alt=""></i>北京市海淀区清华北路88号清华广场</p>
+         </li>
+         <li>
+            <a href="tel:010-52490935"></a>
+         </li>
+       </ul>
+    </div>
+    <div class="pay_amount">
+       <h3 class="clearfix">实付金额<span class="f-r">￥89.6</span></h3>
+       <p><em>订单号</em><span>5689565986326</span></p>
+       <p><em>购买时间</em><span>2017-02-28  12:50</span></p>
+       <p><em>手机号码</em><span>15889562356</span></p>
+    </div>
+
+    <div class="foot_text ta-c">
+      <p>如有问题可致电（9：00-21：00）</p>
+      <p>客服电话：400-6099-866</p>
+    </div>
+
+ </div>
+
+@@include('./include/footer.html')
+    <script src='public/swiper/js/swiper.min.js'></script>
+    <script src='js/index.js?rev=@@hash'></script>
+    <script>
+      $(function(){
+        js_.c_ticket_details();
+      });
+    </script>
+</body>
+</html>

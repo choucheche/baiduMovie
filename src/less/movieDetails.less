@@ -1,0 +1,287 @@
+
+.html_body {
+    #movieDetails {
+        .movieBanner {
+            width: 100%;
+            .h(358);
+            .p(30,30,30,30);
+            overflow: hidden;
+
+            .movieImg {
+                .w(214);
+                .h(298);
+                .mr(30);
+            }
+
+            .blackBg {
+                width: 100%;
+                .h(358);
+                background: rgba(0,0,0,0.3);
+                left: 0;
+                top: 0;
+                z-index: -1;
+            }
+
+            .movieBg {
+                width: 100%;
+                .h(1074);
+                z-index: -2;
+                left: 0;
+                top: -77.777%;
+                filter: blur(20px);
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .rightInfo {
+                .w(446);
+
+                dl {
+                    width: 100%;
+
+                    dt {
+                        .l-h(40);
+                        .f-s(34);
+                        color: @defaultColor;
+                        .pb(24);
+                    }
+
+                    dd {
+                        .gradeBox {
+                            .w(120);
+                            .h(30);
+                            .p(4,0,6,0);
+
+                            .gradeNum {
+                                .h(20);
+                                background: url("../img/gradeStar2.png") no-repeat;
+                                .bg-s(120,20);
+                                left: 0;
+                                .t(4);
+                                z-index: 2;
+                            }
+
+                            .gradeBg {
+                                .w(120);
+                                .h(20);
+                                background: url("../img/gradeStar2Bg.png") no-repeat;
+                                .bg-s(120,20);
+                            }
+                        }
+
+                        .movieGrade {
+                            .f-s(28);
+                            .l-h(30);
+                            color: @orangeColor1;
+                            .ml(15);
+                        }
+                    }
+                }
+
+                ul {
+                    width: 100%;
+                    .pt(50);
+
+                    li {
+                        .f-s(28);
+                        .l-h(36);
+                        color: @defaultColor;
+                        opacity: 0.6;
+                        .pb(18);
+                    }
+                }
+            }
+        }
+
+        .movieInfoBox {
+            width: 100%;
+            background: @defaultColor;
+
+            .box {
+                border-bottom: 1px @borderColor1 solid;
+                .p(26,30,26,30);
+                .l-h(36);
+                .f-s(28);
+
+                .title {
+                    color: @placeholder;
+                    .l(30);
+                    z-index: 2;
+                    .t(26);
+                }
+
+                .text {
+                    .pl(82);
+                    color: @textColor;
+                    .h(36);
+                    overflow: hidden;
+                    transition: height 1s;
+
+                    &.max_3h {
+                        .h(108);
+                    }
+
+                    &.max_h {
+                        height: auto;
+                    }
+                }
+
+                &.bottomShadow {
+                    box-shadow: 0 15px 5px #fff;
+                }
+
+                .bottomShadow {
+                    width: 100%;
+                    .h(90);
+                    background: url('../img/bottomShadow.png') repeat-x;
+                    background-size: auto 100%;
+                    z-index: 2;
+                    left: 0;
+                    bottom: 0;
+                }
+
+                &.storyBox {
+                    border-bottom: none;
+                }
+            }
+
+            .bottomBox {
+                width: 100%;
+                .h(56);
+                .pt(11);
+
+                .arrowsIcon {
+                    .w(22);
+                    .h(12);
+                    background: url('../img/arrowsDown.png') no-repeat;
+                    .bg-s(22,12);
+                    margin: 0 auto;
+
+                    &.perversion {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+
+        .mediaBox {
+            width: 100%;
+            background: @defaultColor;
+            .mt(20);
+
+            dl {
+                .p(22,30,22,30);
+                .h(80);
+
+                dt {
+                    color: @textColor;
+                    .f-s(30);
+                    .l-h(36);
+                }
+
+                dd {
+                    .f-s(24);
+                    .l-h(36);
+
+                    .text {
+                        color: @placeholder;
+                        &:active{
+                          opacity:0.8;
+                        }
+                    }
+
+                    .line {
+                        .m(0,20,0,20);
+                        .w(1);
+                        .h(20);
+                        background: @placeholder;
+                        .t-t(0,10);
+                    }
+
+                    .moreArrows {
+                        .w(10);
+                        .h(18);
+                        background: url('../img/arrowsMore.png') no-repeat;
+                        .bg-s(10,18);
+                        .ml(10);
+                        .t-t(0,10);
+                    }
+                }
+            }
+
+            .mediaList {
+                width: 100%;
+                .pb(30);
+
+                .swiper-container {
+                    width: 100%;
+                    overflow-x: hidden;
+
+                    .swiper-wrapper {
+                        .p(0,0,0,30);
+
+                        .swiper-slide {
+                            .mr(20);
+                            width: auto;
+
+                            a {
+                                width: 100%;
+                                &:active{
+                                  opacity:0.8;
+                                }
+                                &.video {
+                                    .h(130);
+
+                                    .videoIcon {
+                                        background: url('../img/videoIcon.png') no-repeat center center;
+                                        .bg-s(46,46);
+                                        .w(50);
+                                        .h(50);
+                                        .r(12);
+                                        .b(12);
+                                        z-index: 2;
+                                        opacity:0.6;
+                                        border:2px #fff solid;
+                                        border-radius: 50%;
+                                    }
+                                }
+
+                                &.photo {
+                                    .h(130);
+                                }
+
+                                img {
+                                    width: auto;
+                                    .h(130);
+                                }
+                            }
+
+                            &:last-of-type {
+                                .mr(40);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .goChooseSeat {
+            .mt(20);
+            width: 100%;
+            .p(24,30,24,30);
+            background:@defaultColor;
+            .goLink {
+                width: 100%;
+                .h(90);
+                background: @redColor1;
+                color: @defaultColor;
+                .f-s(34);
+                .l-h(90);
+                .b-r(8);
+            }
+            &:active{
+              opacity:0.8;
+            }
+        }
+    }
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script>
+      /*
+      (function(){var b=navigator.userAgent;ipad=b.match(/(iPad).*OS\s([\d_]+)/)?true:false;iphone=!ipad&&b.match(/(iPhone\sOS)\s([\d_]+)/)?true:false;uc=navigator.userAgent.indexOf("UCBrowser")>-1?true:false;ios=ipad||iphone;var d=1,a=1,c;if(ios){if(window.devicePixelRatio>=2){d*=0.5;a*=2}}else{if(uc){if(window.devicePixelRatio>=2){d*=0.5;a*=2}}}c='<meta name="viewport" content="initial-scale='+d+", maximum-scale="+d+", minimum-scale="+d+', width=device-width, user-scalable=no" />';document.write(c);document.documentElement.style.fontSize=20*a+"px"})();
+      */
+      // 自动生成meta标签，安卓下是1倍，苹果下是0.5倍
+
+      //这里老师没有用动态 meta
+    </script>
+    <script>
+      //(function(doc,win){var docEl=doc.documentElement,resizeEvt='orientationchange'in window?'orientationchange':'resize',recalc=function(){var clientWidth=docEl.clientWidth;if(!clientWidth)return;console.log(clientWidth);if(clientWidth>=750){docEl.style.fontSize='100px'}else{docEl.style.fontSize=100*(clientWidth/750)+'px'}};if(!doc.addEventListener)return;win.addEventListener(resizeEvt,recalc,false);doc.addEventListener('DOMContentLoaded',recalc,false)})(document,window);
+      //!(function(doc,win){var docEle=doc.documentElement,evt="onorientationchange"in window?"orientationchange":"resize",fn=function(){var width=docEle.clientWidth;console.log(width);if(width>=750){width&&(docEle.style.fontSize=100+"px")}else{width&&(docEle.style.fontSize=20*(width/150)+"px")}};win.addEventListener(evt,fn,false);doc.addEventListener("DOMContentLoaded",fn,false)}(document,window));
+      // 自动根据浏览器宽度修改html的 font-size
+
+      //document.getElementsByTagName('html')[0].style.fontSize=window.screen.width/10+'px';
+      //body字体大小为页面宽度除以 10
+
+    </script>
+    <script>
+      (function IsPC() {
+        for (var userAgentInfo = navigator.userAgent, Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"], flag = !0, v = 0; v < Agents.length; v++)
+          if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            console.log('移动');
+
+            document.getElementsByTagName('html')[0].style.fontSize=window.screen.width/5+'px';
+            //body字体大小为页面宽度除以 10
+
+            return
+          }
+        console.log('PC');
+
+        document.getElementsByTagName('html')[0].style.fontSize=75+'px';
+        /*
+          设置页面 html 文字根字号大小为37.5，为了让 less 好计算
+          这样 less 里的数值是多少就是多少 px了
+        */
+        return
+      })();
+      // 判断浏览器是手机还是PC
+    </script>
+    <link type='text/css' rel='stylesheet' href='public/bootstrap/css/bootstrap.min.css'>
+
+    <title>电影详情</title>
+    <link type='text/css' rel='stylesheet' href='public/swiper/css/swiper.min.css?rev=6af34d0737ad0ca608111771cf74cc79'>
+    <link type='text/css' rel='stylesheet' href='css/index.css?rev=4494e988e1b556c5501ba932d6dbf5dd'>
+</head>
+
+<body>
+  <div class='html_body no_pb'>
+
+    <div id='header' class='d-b p-f gray_bg'>
+      <div class='linkBtn d-b f-l'>
+        <div class='closeBtn nd-b'></div>
+        <a class='backBtn d-b' href='javascript:history.back();'></a>
+      </div>
+      <div class='searchBox nd-b f-l'>
+        <input type='text' placeholder="搜索电影、影院">
+      </div>
+      <div class='cityBtn nd-b f-l'>
+        <div class="cityName text-h">
+          乌鲁木齐
+        </div>
+      </div>
+      <div class='centerTitle d-b f-l ta-c'>
+        金刚狼：殊死一战
+      </div>
+    </div>
+
+    <div id='movieDetails'>
+      <div class='movieBanner p-r d-b'>
+        <img class='movieImg d-b f-l' src='img/movieImg2.png'>
+        <div class='rightInfo d-b f-l'>
+          <dl>
+            <dt>金刚狼3：殊死一战</dt>
+            <dd class='clear'>
+              <div class='gradeBox d-b p-r f-l'>
+                <div class='gradeNum d-b p-a' style='width:88%'></div>
+                <div class='gradeBg d-b'></div>
+              </div>
+              <span class='movieGrade d-b f-l'>8.8</span>
+            </dd>
+          </dl>
+          <ul>
+            <li>类别：<span>动作冒险</span></li>
+            <li>片长：<span>107分钟</span></li>
+            <li>上映：<span>2017-02-07</span></li>
+          </ul>
+        </div>
+        <div class='blackBg d-b p-a'></div>
+        <div class='movieBg d-b p-a' style='background-image:url(img/movieImg2.png); background-size:100% 100%;'>
+      </div>
+    </div>
+    <div class='movieInfoBox'>
+      <div class='box p-r'>
+        <div class='title p-a'>导演：</div>
+        <div class='text text-h'>保罗安德森</div>
+      </div>
+      <div class='box p-r'>
+        <div class='title p-a'>主演：</div>
+        <div class='text text-h'>米拉.乔沃维奇/西耶娜.盖尔利/肖恩.罗伯茨...</div>
+      </div>
+      <div class='box storyBox p-r'>
+        <div class='title p-a'>剧情：</div>
+        <div class='text story max_3h'>
+          <div class='textAll'>
+            米拉.乔沃维奇表达了他对最终曲的希望，虽然他一再强调金刚狼3走的是文艺路线，
+            但是阿三还是很努力的，大家都是这么说，不是
+            米拉.乔沃维奇表达了他对最终曲的希望，虽然他一再强调金刚狼3走的是文艺路线，
+            但是阿三还是很努力的，大家都是这么说，不是
+          </div>
+        </div>
+        <div class='bottomShadow d-b p-a'></div>
+      </div>
+      <div class='bottomBox'>
+        <div class='arrowsIcon d-b'></div>
+      </div>
+    </div>
+    <div class='mediaBox'>
+      <dl>
+        <dt class='d-b f-l'>媒体库</dt>
+        <dd class='d-b f-r clear'>
+          <a class='text d-b f-l' href='#'>视频<span>32</span></a>
+          <span class='line d-b f-l'></span>
+          <a href='#' class='d-b f-l'>
+            <div class='text d-b f-l'>剧照<span>132</span></div>
+            <span class='moreArrows d-b f-l'></span>
+          </a>
+        </dd>
+      </dl>
+      <div class='mediaList'>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href='#' class='video d-b p-r'>
+                <span class='videoIcon d-b p-a'></span>
+                <img class='d-b' src='img/video.jpg'>
+              </a>
+            </div>
+            <div class="swiper-slide d-b">
+              <a href='#' class='photo d-b'>
+                <img class='d-b' src='img/photo1.png'>
+              </a>
+            </div>
+            <div class="swiper-slide d-b">
+              <a href='#' class='photo d-b'>
+                <img class='d-b' src='img/photo1.png'>
+              </a>
+            </div>
+            <div class="swiper-slide d-b">
+              <a href='#' class='photo d-b'>
+                <img class='d-b' src='img/photo1.png'>
+              </a>
+            </div>
+            <div class="swiper-slide d-b">
+              <a href='#' class='photo d-b'>
+                <img class='d-b' src='img/photo1.png'>
+              </a>
+            </div>
+            <div class="swiper-slide d-b">
+              <a href='#' class='photo d-b'>
+                <img class='d-b' src='img/photo1.png'>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='goChooseSeat'>
+      <a href='#' class='goLink d-b ta-c'>选座购票</a>
+    </div>
+  </div>
+
+    <script src='public/jquery/jquery-1.12.4.min.js'></script>
+    <script src='public/bootstrap/js/bootstrap.min.js'></script>
+    <script>
+      $(function(){
+        $(window).resize(function() {
+        //当页面宽度变化时
+          (function IsPC() {
+          //判断是 移动端 还是 PC
+            for (var userAgentInfo = navigator.userAgent, Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"], flag = !0, v = 0; v < Agents.length; v++)
+              if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                console.log('移动');
+
+                document.getElementsByTagName('html')[0].style.fontSize=window.screen.width/5+'px';
+                //body字体大小为页面宽度除以 10
+
+                return
+              }
+            console.log('PC');
+
+            document.getElementsByTagName('html')[0].style.fontSize=75+'px';
+            /*
+              设置页面 html 文字根字号大小为37.5，为了让 less 好计算
+              这样 less 里的数值是多少就是多少 px了
+            */
+
+            return
+          })();
+        });
+
+      });
+    </script>
+
+    <script src='public/swiper/js/swiper.min.js'></script>
+    <script src='js/index.js?rev=d3d1679babdc01c6b44bb23dc00e31f0'></script>
+    <script>
+      $(function(){
+        js_.movieDetails();
+      });
+    </script>
+</body>
+</html>

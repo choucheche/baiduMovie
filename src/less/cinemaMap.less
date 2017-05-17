@@ -1,0 +1,93 @@
+.html_body {
+    #cinemaMap {
+        width: 100%;
+        background:@defaultColor;
+        #h5Point {
+            left: -100%;
+            top: -100%;
+            z-index: -1;
+        }
+
+        #baiduMap {
+            width: 100%;
+        }
+
+        .cinemaInfo {
+            width: 100%;
+            .p(38,30,42,30);
+            background: @bodyBgColor;
+
+            .cinemaIntroduce {
+                width: 100%;
+                .pb(25);
+
+                dt {
+                    width: 100%;
+                    .f-s(34);
+                    .l-h(40);
+                    color: @textColor;
+                    .pb(20);
+                }
+
+                dd {
+                    .starBox {
+                        .w(88);
+                        .h(20);
+                        left: 0;
+                        .t(5);
+                        .mr(10);
+
+                        .bg {
+                            .w(88);
+                            .h(15);
+                            background: url('../img/gradeStar.png') no-repeat;
+                            .bg-s(88,15);
+                            left: 0;
+                            top: 0;
+                            z-index: 3;
+                        }
+
+                        .num {
+                            .h(15);
+                            background: @orangeColor1;
+                            left: 0;
+                            top: 0;
+                            z-index: 2;
+                        }
+
+                        .grayBg {
+                            width: 100%;
+                            .h(15);
+                            background: @grayColor1;
+                        }
+                    }
+
+                    .gradeNum {
+                        color: @orangeColor1;
+                        .f-s(22);
+                        .l-h(26);
+                    }
+                }
+            }
+
+            .addressBox {
+                width: 100%;
+                .l-h(32);
+                .f-s(24);
+                color: @placeholder;
+
+                dt {
+                    background: url('../img/addressIcon.png') no-repeat;
+                    .bg-p(0,2);
+                    .bg-s(21,28);
+                    .pl(34);
+                    .w(560);
+                }
+
+                dd {
+                    .w(120);
+                }
+            }
+        }
+    }
+}

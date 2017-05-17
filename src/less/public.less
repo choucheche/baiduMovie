@@ -1,0 +1,35 @@
+
+.html_body {
+    .p(88,0,121,0);
+    &.no_pb{
+      .p(88,0,0,0);
+    }
+    .moreTitle {
+        width: 100%;
+        .h(91);
+        background: @defaultColor;
+        border-bottom: 1px @borderColor1 solid;
+        .p(0,30,0,30);
+
+        .text {
+            .f-s(30);
+            color: @textColor;
+            .l-h(90);
+            font-weight: bold;
+        }
+
+        a {
+            .f-s(24);
+            color: @placeholder;
+            .l-h(90);
+
+            span {
+                .t-t(10,0);
+                .w(10);
+                .h(18);
+                background: url('../img/arrowsMore.png') no-repeat center center;
+                .bg-s(10,18);
+            }
+        }
+    }
+}

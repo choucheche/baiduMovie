@@ -1,0 +1,67 @@
+
+.html_body{
+  #selectCity{
+    .nowCity{
+      background:@defaultColor;
+      width:100%;
+      .h(80);
+      .pl(18);
+      .f-s(28);
+      .l-h(80);
+      color:@textColor;
+      font-weight: bold;
+      border-bottom:1px @borderColor1 solid;
+    }
+    .locationBox{
+      width:100%;
+      .p(25,0,18,20);
+      .cityTitle{
+        .l-h(34);
+        .f-s(26);
+        color:@placeholder;
+        .pb(15);
+      }
+      .locationCity{
+        .p(0,76,0,76);
+        color:@textColor;
+        .f-s(26);
+        font-weight: bold;
+        .l-h(74);
+        background:@defaultColor;
+        .b-r(5);
+        &:active{
+          opacity:0.8;
+        }
+      }
+    }
+  }
+  .cityList{
+    width:100%;
+    dl{
+      width:100%;
+      dt{
+        .h(62);
+        .l-h(62);
+        .pl(20);
+        color:@placeholder;
+        .f-s(26);
+        font-weight: normal;
+      }
+      dd{
+        border-bottom:1px @borderColor1 solid;
+        .pl(20);
+        .h(85);
+        .l-h(84);
+        background:@defaultColor;
+        font-weight: bold;
+        .f-s(26);
+        &:last-of-type{
+          border-bottom:none;
+        }
+        &:active{
+          opacity:0.8;
+        }
+      }
+    }
+  }
+}

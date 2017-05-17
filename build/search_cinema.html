@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script>
+      /*
+      (function(){var b=navigator.userAgent;ipad=b.match(/(iPad).*OS\s([\d_]+)/)?true:false;iphone=!ipad&&b.match(/(iPhone\sOS)\s([\d_]+)/)?true:false;uc=navigator.userAgent.indexOf("UCBrowser")>-1?true:false;ios=ipad||iphone;var d=1,a=1,c;if(ios){if(window.devicePixelRatio>=2){d*=0.5;a*=2}}else{if(uc){if(window.devicePixelRatio>=2){d*=0.5;a*=2}}}c='<meta name="viewport" content="initial-scale='+d+", maximum-scale="+d+", minimum-scale="+d+', width=device-width, user-scalable=no" />';document.write(c);document.documentElement.style.fontSize=20*a+"px"})();
+      */
+      // 自动生成meta标签，安卓下是1倍，苹果下是0.5倍
+
+      //这里老师没有用动态 meta
+    </script>
+    <script>
+      //(function(doc,win){var docEl=doc.documentElement,resizeEvt='orientationchange'in window?'orientationchange':'resize',recalc=function(){var clientWidth=docEl.clientWidth;if(!clientWidth)return;console.log(clientWidth);if(clientWidth>=750){docEl.style.fontSize='100px'}else{docEl.style.fontSize=100*(clientWidth/750)+'px'}};if(!doc.addEventListener)return;win.addEventListener(resizeEvt,recalc,false);doc.addEventListener('DOMContentLoaded',recalc,false)})(document,window);
+      //!(function(doc,win){var docEle=doc.documentElement,evt="onorientationchange"in window?"orientationchange":"resize",fn=function(){var width=docEle.clientWidth;console.log(width);if(width>=750){width&&(docEle.style.fontSize=100+"px")}else{width&&(docEle.style.fontSize=20*(width/150)+"px")}};win.addEventListener(evt,fn,false);doc.addEventListener("DOMContentLoaded",fn,false)}(document,window));
+      // 自动根据浏览器宽度修改html的 font-size
+
+      //document.getElementsByTagName('html')[0].style.fontSize=window.screen.width/10+'px';
+      //body字体大小为页面宽度除以 10
+
+    </script>
+    <script>
+      (function IsPC() {
+        for (var userAgentInfo = navigator.userAgent, Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"], flag = !0, v = 0; v < Agents.length; v++)
+          if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            console.log('移动');
+
+            document.getElementsByTagName('html')[0].style.fontSize=window.screen.width/5+'px';
+            //body字体大小为页面宽度除以 10
+
+            return
+          }
+        console.log('PC');
+
+        document.getElementsByTagName('html')[0].style.fontSize=75+'px';
+        /*
+          设置页面 html 文字根字号大小为37.5，为了让 less 好计算
+          这样 less 里的数值是多少就是多少 px了
+        */
+        return
+      })();
+      // 判断浏览器是手机还是PC
+    </script>
+    <link type='text/css' rel='stylesheet' href='public/bootstrap/css/bootstrap.min.css'>
+
+    <title>首页</title>
+    <link type='text/css' rel='stylesheet' href='public/swiper/css/swiper.min.css?rev=6af34d0737ad0ca608111771cf74cc79'>
+    <link type='text/css' rel='stylesheet' href='css/index.css?rev=4494e988e1b556c5501ba932d6dbf5dd'>
+</head>
+<body>
+ <div class='body_content'>
+    <div id='header' class='d-b p-f gray_bg clearfix'>
+      <div class='linkBtn d-b f-l'>
+        <div class='closeBtn nd-b'></div>
+        <a href="rsearch_list.html" class='backBtn d-b'></a>
+      </div>
+      <div class='searchBox nd-b f-l'>
+        <input type='text' placeholder="搜索电影、影院">
+      </div>
+      <div class='cityBtn nd-b f-l'>
+        <div class="cityName text-h">
+          乌鲁木齐
+        </div>
+      </div>
+      <div class='centerTitle d-b f-l ta-c'>
+          搜索
+      </div>
+    </div>
+
+   <!-- 搜索按钮框 -->
+  <div class="search_btn clear">
+      <form>
+        <div class="f-l">
+          <select>
+            <option value="电影">电影</option>
+            <option value="影院">影院</option>
+          </select>
+          <input class='searchTextInput' type="text" placeholder="金刚狼">
+          <em></em>
+        </div>
+        <button type="submit" class="f-l">搜索</button>
+      </form>
+   </div>
+
+   <div class="search_content" style='display:block'>
+      <ul>
+        <li><i><img src="img/search_ico.png" alt=""></i>疯狂动物城</li>
+        <li><i><img src="img/search_ico.png" alt=""></i>疯狂动物城：3D版本</li>
+      </ul>
+      <p class="ta-c">清除搜索历史</p>
+   </div>
+
+  <div class='searchCinemaList' style='display:none'>
+    <div class="box">
+      <dl>
+        <dt>万达国际影城（南海万达广场）</dt>
+        <dd class='clear'>
+          <div class='d-b f-l'>
+            佛上市南海区桂澜北路28号南海万达广场
+          </div>
+          <span class='d-b f-r ta-r'>1.4km</span>
+        </dd>
+      </dl>
+    </div>
+    <div class="box">
+      <dl>
+        <dt>万达国际影城（南海万达广场）</dt>
+        <dd class='clear'>
+          <div class='d-b f-l'>
+            佛上市南海区桂澜北路28号南海万达广场
+          </div>
+          <span class='d-b f-r ta-r'>1.4km</span>
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="film_paly" style="display: none;">
+     <div class="film_paly_content">
+       <div id='searchFilmList' style="display: block;">
+         <ol>
+           <li>
+              <a href="javascript:;" class="clearfix">
+                 <span class="f-l">
+                   <img src="img/film_list01.png" alt="">
+                 </span>
+                 <em class="f-l">
+                    <h2>驯龙高手<i>3D</i></h2>
+                    <strong>
+                       <p><img src="img/gradeStar2.png" alt=""></p>
+                       <p><img src="img/gradeStar2Bg.png" alt=""></p>
+                       <i>8.8</i>
+                    </strong>
+                    <p class="paly_content_p">导演：迪恩·德布洛斯</p>
+                    <p>主演：杰伊·巴鲁切尔，艾米莉卡·费雷拉</p>
+                 </em>
+              </a>
+           </li>
+         </ol>
+         <ol>
+           <li>
+              <a href="javascript:;" class="clearfix">
+                 <span class="f-l">
+                   <img src="img/film_list02.png" alt="">
+                 </span>
+                 <em class="f-l">
+                    <h2>金刚狼3:殊死一战<i>IMAX 3D</i></h2>
+                    <strong>
+                       <p><img src="img/gradeStar2.png" alt=""></p>
+                       <p><img src="img/gradeStar2Bg.png" alt=""></p>
+                       <i>8.8</i>
+                    </strong>
+                    <p class="paly_content_p">导演：迪恩·德布洛斯</p>
+                    <p>主演：杰伊·巴鲁切尔，艾米莉卡·费雷拉</p>
+                 </em>
+              </a>
+           </li>
+         </ol>
+         <ol>
+           <li>
+              <a href="javascript:;" class="clearfix">
+                 <span class="f-l">
+                   <img src="img/film_list03.png" alt="">
+                 </span>
+                 <em class="f-l">
+                    <h2>驯龙高手<i>3D</i></h2>
+                    <strong>
+                       <p><img src="img/gradeStar2.png" alt=""></p>
+                       <p><img src="img/gradeStar2Bg.png" alt=""></p>
+                       <i>8.8</i>
+                    </strong>
+                    <p class="paly_content_p">导演：迪恩·德布洛斯</p>
+                    <p>主演：杰伊·巴鲁切尔，艾米莉卡·费雷拉</p>
+                 </em>
+              </a>
+           </li>
+         </ol>
+         <ol>
+           <li>
+              <a href="javascript:;" class="clearfix">
+                 <span class="f-l">
+                   <img src="img/film_list04.png" alt="">
+                 </span>
+                 <em class="f-l">
+                    <h2>最终幻想:王者之剑<i>2D</i></h2>
+                    <strong>
+                       <p><img src="img/gradeStar2.png" alt=""></p>
+                       <p><img src="img/gradeStar2Bg.png" alt=""></p>
+                       <i>8.8</i>
+                    </strong>
+                    <p class="paly_content_p">导演：迪恩·德布洛斯</p>
+                    <p>主演：杰伊·巴鲁切尔，艾米莉卡·费雷拉</p>
+                 </em>
+              </a>
+           </li>
+         </ol>
+         <ol>
+           <li>
+              <a href="javascript:;" class="clearfix">
+                 <span class="f-l">
+                   <img src="img/film_list01.png" alt="">
+                 </span>
+                 <em class="f-l">
+                    <h2>驯龙高手<i>IMAX 2D</i></h2>
+                    <strong>
+                       <p><img src="img/gradeStar2.png" alt=""></p>
+                       <p><img src="img/gradeStar2Bg.png" alt=""></p>
+                       <i>8.8</i>
+                    </strong>
+                    <p class="paly_content_p">导演：迪恩·德布洛斯</p>
+                    <p>主演：杰伊·巴鲁切尔，艾米莉卡·费雷拉</p>
+                 </em>
+              </a>
+           </li>
+         </ol>
+       </div>
+     </div>
+  </div>
+
+ </div>
+
+    <script src='public/jquery/jquery-1.12.4.min.js'></script>
+    <script src='public/bootstrap/js/bootstrap.min.js'></script>
+    <script>
+      $(function(){
+        $(window).resize(function() {
+        //当页面宽度变化时
+          (function IsPC() {
+          //判断是 移动端 还是 PC
+            for (var userAgentInfo = navigator.userAgent, Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"], flag = !0, v = 0; v < Agents.length; v++)
+              if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                console.log('移动');
+
+                document.getElementsByTagName('html')[0].style.fontSize=window.screen.width/5+'px';
+                //body字体大小为页面宽度除以 10
+
+                return
+              }
+            console.log('PC');
+
+            document.getElementsByTagName('html')[0].style.fontSize=75+'px';
+            /*
+              设置页面 html 文字根字号大小为37.5，为了让 less 好计算
+              这样 less 里的数值是多少就是多少 px了
+            */
+
+            return
+          })();
+        });
+
+      });
+    </script>
+
+    <script src='public/swiper/js/swiper.min.js'></script>
+    <script src='js/index.js?rev=d3d1679babdc01c6b44bb23dc00e31f0'></script>
+    <script>
+      $(function(){
+        js_.search_cinema();
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+index	D:\work\百度电影\my_app\src\js\index.js	/^    index: function() {$/;"	function	line:2
+js_.index	D:\work\百度电影\my_app\src\js\index.js	/^    index: function() {$/;"	method	line:2
+selectCity	D:\work\百度电影\my_app\src\js\index.js	/^    selectCity: function() {$/;"	function	line:23
+js_.selectCity	D:\work\百度电影\my_app\src\js\index.js	/^    selectCity: function() {$/;"	method	line:23
+getLocation	D:\work\百度电影\my_app\src\js\index.js	/^      function getLocation()$/;"	function	line:29
+js_.selectCity.getLocation	D:\work\百度电影\my_app\src\js\index.js	/^      function getLocation()$/;"	function	line:29
+showPosition	D:\work\百度电影\my_app\src\js\index.js	/^      function showPosition(position){$/;"	function	line:37
+js_.selectCity.showPosition	D:\work\百度电影\my_app\src\js\index.js	/^      function showPosition(position){$/;"	function	line:37
+showError	D:\work\百度电影\my_app\src\js\index.js	/^      function showError(error)$/;"	function	line:46
+js_.selectCity.showError	D:\work\百度电影\my_app\src\js\index.js	/^      function showError(error)$/;"	function	line:46
+movieDetails	D:\work\百度电影\my_app\src\js\index.js	/^    },movieDetails:function(){$/;"	function	line:109
+js_.movieDetails	D:\work\百度电影\my_app\src\js\index.js	/^    },movieDetails:function(){$/;"	method	line:109
+movieScreening	D:\work\百度电影\my_app\src\js\index.js	/^    },movieScreening:function(){$/;"	function	line:130
+js_.movieScreening	D:\work\百度电影\my_app\src\js\index.js	/^    },movieScreening:function(){$/;"	method	line:130
+cinemaBuyTicket	D:\work\百度电影\my_app\src\js\index.js	/^    },cinemaBuyTicket:function(){$/;"	function	line:288
+js_.cinemaBuyTicket	D:\work\百度电影\my_app\src\js\index.js	/^    },cinemaBuyTicket:function(){$/;"	method	line:288
+update	D:\work\百度电影\my_app\src\js\index.js	/^      function update(){$/;"	function	line:364
+js_.cinemaBuyTicket.update	D:\work\百度电影\my_app\src\js\index.js	/^      function update(){$/;"	function	line:364
+onTap	D:\work\百度电影\my_app\src\js\index.js	/^          onTap: function(swiper){$/;"	function	line:400
+buyTicketTime	D:\work\百度电影\my_app\src\js\index.js	/^    },buyTicketTime:function(){$/;"	function	line:416
+js_.buyTicketTime	D:\work\百度电影\my_app\src\js\index.js	/^    },buyTicketTime:function(){$/;"	method	line:416
+onTap	D:\work\百度电影\my_app\src\js\index.js	/^          onTap: function(swiper){$/;"	function	line:425
+onTap	D:\work\百度电影\my_app\src\js\index.js	/^          onTap: function(swiper){$/;"	function	line:446
+updata	D:\work\百度电影\my_app\src\js\index.js	/^      function updata(){$/;"	function	line:458
+js_.buyTicketTime.updata	D:\work\百度电影\my_app\src\js\index.js	/^      function updata(){$/;"	function	line:458
+moviePhotos	D:\work\百度电影\my_app\src\js\index.js	/^    },moviePhotos:function(){$/;"	function	line:476
+js_.moviePhotos	D:\work\百度电影\my_app\src\js\index.js	/^    },moviePhotos:function(){$/;"	method	line:476
+photoClick	D:\work\百度电影\my_app\src\js\index.js	/^      function photoClick(){$/;"	function	line:485
+js_.moviePhotos.photoClick	D:\work\百度电影\my_app\src\js\index.js	/^      function photoClick(){$/;"	function	line:485
+film_order	D:\work\百度电影\my_app\src\js\index.js	/^    },film_order:function(){$/;"	function	line:582
+js_.film_order	D:\work\百度电影\my_app\src\js\index.js	/^    },film_order:function(){$/;"	method	line:582
+c_ticket_details	D:\work\百度电影\my_app\src\js\index.js	/^    },c_ticket_details:function(){$/;"	function	line:586
+js_.c_ticket_details	D:\work\百度电影\my_app\src\js\index.js	/^    },c_ticket_details:function(){$/;"	method	line:586
+film_list	D:\work\百度电影\my_app\src\js\index.js	/^    },film_list:function(){$/;"	function	line:592
+js_.film_list	D:\work\百度电影\my_app\src\js\index.js	/^    },film_list:function(){$/;"	method	line:592
+search_cinema	D:\work\百度电影\my_app\src\js\index.js	/^    },search_cinema:function(){$/;"	function	line:601
+js_.search_cinema	D:\work\百度电影\my_app\src\js\index.js	/^    },search_cinema:function(){$/;"	method	line:601

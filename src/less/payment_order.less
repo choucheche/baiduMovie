@@ -1,0 +1,128 @@
+
+.body_content {
+	.p(88,0,0,0);
+	.payment_content {
+		.timeOutBox{
+			width:100%;
+			.h(54);
+			background:@orangeColor2;
+			.l-h(54);
+			color:@orangeColor3;
+			.f-s(20);
+			.border-bottom(1,@borderColor1);
+			.timeOutText{
+				.l-h(54);
+				.f-s(20);
+				.pl(32);
+				background-image:url('../img/timeIcon.png');
+				.bg-s(23,25);
+				background-position: left center;
+				background-repeat:no-repeat;
+			}
+		}
+		.payment_contentWrap{
+			width:100%;
+			.p(0,25,0,25);
+		}
+		h2 {
+			border-bottom: #dadada dashed 1px;
+			.f-s(34);
+			.l-h(40);
+			.p(34,0,34,0);
+			span{
+				.f-s(34);
+				.l-h(40);
+				font-weight:bold;
+			}
+		}
+
+		h2 em {
+			color: #b2b2b2;
+			.f-s(26);
+			.pl(20);
+		}
+
+		.pay_order_li {
+			border-bottom: #dadada solid 1px;
+			.p(10,0,0,0);
+
+			ol li {
+				.h(60);
+				.l-h(60);
+				.f-s(30);
+				color: #b2b2b2;
+
+				em {
+					color: #2b2b2b;
+				}
+			}
+
+			ol li:nth-child(1) em {
+				color: #3fb1f8;
+			}
+		}
+
+		.total_price {
+			.h(70);
+			.l-h(70);
+			.f-s(30);
+			span {
+				color: #dd2727;
+				font-weight: bold;
+				.f-s(28);
+			}
+
+			em {
+				display: inline-block;
+				font-weight: 200;
+				color: #666;
+				.mr(10);
+			}
+		}
+	}
+
+	.payment_iphone {
+		.h(100);
+		.l-h(100);
+		background: @defaultColor;
+		.mb(20);
+		.pl(20);
+		.f-s(30);
+		input {
+			.ml(20);
+		}
+
+		span {
+			color: #dd2727;
+			border: #dd2727 solid 1px;
+			.p(0,10,0,10);
+			.ml(20);
+			.f-s(22);
+			.l-h(28);		}
+	}
+
+	.payment_text {
+		position: fixed;
+		bottom: 0;
+		.f-s(30);
+		width: 100%;
+		background: @defaultColor;
+		span {
+			.f-s(30);
+			float: left;
+			.ml(330);
+			.l-h(50);
+			.pt(20);
+			color: #dd2727;
+		}
+
+		button {
+			float: right;
+			.w(200);
+			.h(90);
+			color: #fff;
+			background: #dd2727;
+			margin: 0 auto;
+		}
+	}
+}

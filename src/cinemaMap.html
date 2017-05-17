@@ -1,0 +1,58 @@
+@@include('./include/header.html')
+    <title>电影详情</title>
+    <link type='text/css' rel='stylesheet' href='css/index.css?rev=@@hash'>
+</head>
+
+<body>
+  <div class='html_body no_pb'>
+
+    <div id='header' class='d-b p-f gray_bg'>
+      <div class='linkBtn d-b f-l'>
+        <div class='closeBtn d-b'></div>
+        <a class='backBtn nd-b' href='javascript:history.back();'></a>
+      </div>
+      <div class='searchBox nd-b f-l'>
+        <input type='text' placeholder="搜索电影、影院">
+      </div>
+      <div class='cityBtn nd-b f-l'>
+        <div class="cityName text-h">
+          乌鲁木齐
+        </div>
+      </div>
+      <div class='centerTitle d-b f-l ta-c'>
+        中影南方国际影城
+      </div>
+    </div>
+
+    <div id='cinemaMap'>
+      <div id='h5Point' class='p-a'></div>
+      <div id='baiduMap'></div>
+      <div class='cinemaInfo'>
+        <dl class='cinemaIntroduce'>
+          <dt>中影南方国际影城</dt>
+          <dd class='clear'>
+            <div class='starBox p-r d-b f-l'>
+              <div class='bg d-b p-a'></div>
+              <div class="num d-b p-a" style='width:71%'></div>
+              <div class='grayBg'></div>
+            </div>
+            <div class='gradeNum d-b f-l'>7.1</div>
+          </dd>
+        </dl>
+        <dl class='addressBox clear'>
+          <dt class='d-b f-l'>佛上市南海区桂澜北路28号南海万达广场</dt>
+          <dd class='d-b f-r ta-r'>1.4km</dd>
+        </dl>
+    </div>
+  </div>
+</div>
+@@include('./include/footer.html')
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DD279b2a90afdf0ae7a3796787a0742e"></script>
+    <script src='js/index.js?rev=@@hash'></script>
+    <script>
+      $(function(){
+        js_.cinemaMap();
+      });
+    </script>
+</body>
+</html>

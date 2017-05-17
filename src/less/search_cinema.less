@@ -1,0 +1,102 @@
+
+.body_content{
+	.p(88,0,0,0);
+	.f-s(28);
+	.search_btn{
+		.m(20,0,0,0);
+		.p(0,20,20,20);
+		border-bottom:1px #e5e5e5 solid;
+		form{
+			div{
+				position:relative;
+				select{
+					.h(70);
+					.w(130);
+					background:#f6f6f6;
+					.mr(20);
+					.p(5,5,5,10);
+					border-radius: 6px;
+					option{
+						border:none;
+					}
+				}
+			}
+			div input{
+				display:inline-block;
+				.w(560);
+				.h(70);
+				background:#f6f6f6;
+				.mr(20);
+				.pl(20);
+				border-radius: 6px;
+			}
+			div input.searchTextInput{
+				.w(400);
+				.p(0,55,0,20);
+			}
+			div em{
+				display:block;
+				position:absolute;
+				top:50%;
+				transform:translateY(-50%);
+				.r(30);
+				.w(35);
+				.h(35);
+				background:url('../img/close.png') no-repeat center center;
+				background-size: 100% 100%;
+			}
+		}
+
+		button{
+			.w(125);
+			.h(70);
+			color:#fff;
+			background:#dd2727;
+			border-radius: 6px;
+		}
+	}
+	#searchFilmList{
+		.p(0,20,0,20);
+	}
+	.searchCinemaList{
+		width: 100%;
+		background: @defaultColor;
+
+		.box {
+				width: 100%;
+				.p(35,30,35,30);
+				border-bottom: 1px @borderColor1 solid;
+
+				dl {
+						.w(690);
+
+						dt {
+								.l-h(38);
+								.f-s(30);
+								color: @textColor;
+								.pb(10);
+						}
+
+						dd {
+								color: @placeholder;
+
+								div {
+										.f-s(24);
+										.l-h(32);
+										.pl(32);
+										background: url('../img/addressIcon.png') no-repeat;
+										.bg-p(0,2);
+										.bg-s(21,28);
+										.w(560);
+								}
+
+								span {
+										.w(130);
+										.f-s(24);
+										.l-h(32);
+								}
+						}
+				}
+		}
+}
+}

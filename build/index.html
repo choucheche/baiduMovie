@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script>
+      /*
+      (function(){var b=navigator.userAgent;ipad=b.match(/(iPad).*OS\s([\d_]+)/)?true:false;iphone=!ipad&&b.match(/(iPhone\sOS)\s([\d_]+)/)?true:false;uc=navigator.userAgent.indexOf("UCBrowser")>-1?true:false;ios=ipad||iphone;var d=1,a=1,c;if(ios){if(window.devicePixelRatio>=2){d*=0.5;a*=2}}else{if(uc){if(window.devicePixelRatio>=2){d*=0.5;a*=2}}}c='<meta name="viewport" content="initial-scale='+d+", maximum-scale="+d+", minimum-scale="+d+', width=device-width, user-scalable=no" />';document.write(c);document.documentElement.style.fontSize=20*a+"px"})();
+      */
+      // 自动生成meta标签，安卓下是1倍，苹果下是0.5倍
+
+      //这里老师没有用动态 meta
+    </script>
+    <script>
+      //(function(doc,win){var docEl=doc.documentElement,resizeEvt='orientationchange'in window?'orientationchange':'resize',recalc=function(){var clientWidth=docEl.clientWidth;if(!clientWidth)return;console.log(clientWidth);if(clientWidth>=750){docEl.style.fontSize='100px'}else{docEl.style.fontSize=100*(clientWidth/750)+'px'}};if(!doc.addEventListener)return;win.addEventListener(resizeEvt,recalc,false);doc.addEventListener('DOMContentLoaded',recalc,false)})(document,window);
+      //!(function(doc,win){var docEle=doc.documentElement,evt="onorientationchange"in window?"orientationchange":"resize",fn=function(){var width=docEle.clientWidth;console.log(width);if(width>=750){width&&(docEle.style.fontSize=100+"px")}else{width&&(docEle.style.fontSize=20*(width/150)+"px")}};win.addEventListener(evt,fn,false);doc.addEventListener("DOMContentLoaded",fn,false)}(document,window));
+      // 自动根据浏览器宽度修改html的 font-size
+
+      //document.getElementsByTagName('html')[0].style.fontSize=window.screen.width/10+'px';
+      //body字体大小为页面宽度除以 10
+
+    </script>
+    <script>
+      (function IsPC() {
+        for (var userAgentInfo = navigator.userAgent, Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"], flag = !0, v = 0; v < Agents.length; v++)
+          if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            console.log('移动');
+
+            document.getElementsByTagName('html')[0].style.fontSize=window.screen.width/5+'px';
+            //body字体大小为页面宽度除以 10
+
+            return
+          }
+        console.log('PC');
+
+        document.getElementsByTagName('html')[0].style.fontSize=75+'px';
+        /*
+          设置页面 html 文字根字号大小为37.5，为了让 less 好计算
+          这样 less 里的数值是多少就是多少 px了
+        */
+        return
+      })();
+      // 判断浏览器是手机还是PC
+    </script>
+    <link type='text/css' rel='stylesheet' href='public/bootstrap/css/bootstrap.min.css'>
+
+    <title>首页</title>
+    <link type='text/css' rel='stylesheet' href='public/swiper/css/swiper.min.css?rev=6af34d0737ad0ca608111771cf74cc79'>
+    <link type='text/css' rel='stylesheet' href='css/index.css?rev=4494e988e1b556c5501ba932d6dbf5dd'>
+</head>
+
+<body>
+  <div class='html_body'>
+
+    <div id='header' class='d-b p-f'>
+      <div class='linkBtn d-b f-l'>
+        <div class='closeBtn d-b'></div>
+        <a class='backBtn nd-b' href='javascript:history.back();'></a>
+      </div>
+      <div class='searchBox d-b f-l'>
+        <input type='text' placeholder="搜索电影、影院">
+      </div>
+      <div class='cityBtn d-b f-l'>
+        <div id='cityName' class="cityName text-h">
+          乌鲁木齐
+        </div>
+      </div>
+      <div class='centerTitle nd-b f-l ta-c'>
+        万达国际影城（南海万达广场）
+      </div>
+    </div>
+
+    <div id='home'>
+      <div class='banner'>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class='d-b' src='img/bannerImg.png'>
+            </div>
+            <div class="swiper-slide">
+              <img class='d-b' src='img/bannerImg.png'>
+            </div>
+            <div class="swiper-slide">
+              <img class='d-b' src='img/bannerImg.png'>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <div class='moreTitle d-b'>
+        <div class='text d-b f-l'>热映电影</div>
+        <a href='#' class='d-b f-r'>
+          更多<span class='d-ib'></span>
+        </a>
+      </div>
+      <div class='movieList'>
+        <div class="swiper-container2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide p-r">
+              <img class='d-b' src='img/movieImg1.png'>
+              <dl>
+                <dt class='text-h'>一条狗的使命</dt>
+                <dd>
+                  <div class='starBox p-r d-b f-l'>
+                    <div class='bg d-b p-a'></div>
+                    <div class="num d-b p-a" style='width:71%'></div>
+                    <div class='grayBg'></div>
+                  </div>
+                  <div class='gradeNum d-b f-l'>7.1</div>
+                </dd>
+              </dl>
+            </div>
+            <div class="swiper-slide p-r">
+              <img class='d-b' src='img/movieImg1.png'>
+              <dl>
+                <dt class='text-h'>一条狗的使命</dt>
+                <dd>
+                  <div class='starBox p-r d-b f-l'>
+                    <div class='bg d-b p-a'></div>
+                    <div class="num d-b p-a" style='width:71%'></div>
+                    <div class='grayBg'></div>
+                  </div>
+                  <div class='gradeNum d-b f-l'>7.1</div>
+                </dd>
+              </dl>
+            </div>
+            <div class="swiper-slide p-r">
+              <img class='d-b' src='img/movieImg1.png'>
+              <dl>
+                <dt class='text-h'>一条狗的使命</dt>
+                <dd>
+                  <div class='starBox p-r d-b f-l'>
+                    <div class='bg d-b p-a'></div>
+                    <div class="num d-b p-a" style='width:71%'></div>
+                    <div class='grayBg'></div>
+                  </div>
+                  <div class='gradeNum d-b f-l'>7.1</div>
+                </dd>
+              </dl>
+            </div>
+            <div class="swiper-slide p-r">
+              <img class='d-b' src='img/movieImg1.png'>
+              <dl>
+                <dt class='text-h'>一条狗的使命</dt>
+                <dd>
+                  <div class='starBox p-r d-b f-l'>
+                    <div class='bg d-b p-a'></div>
+                    <div class="num d-b p-a" style='width:71%'></div>
+                    <div class='grayBg'></div>
+                  </div>
+                  <div class='gradeNum d-b f-l'>7.1</div>
+                </dd>
+              </dl>
+            </div>
+            <div class="swiper-slide p-r">
+              <img class='d-b' src='img/movieImg1.png'>
+              <dl>
+                <dt class='text-h'>一条狗的使命</dt>
+                <dd>
+                  <div class='starBox p-r d-b f-l'>
+                    <div class='bg d-b p-a'></div>
+                    <div class="num d-b p-a" style='width:71%'></div>
+                    <div class='grayBg'></div>
+                  </div>
+                  <div class='gradeNum d-b f-l'>7.1</div>
+                </dd>
+              </dl>
+            </div>
+            <div class="swiper-slide p-r">
+              <img class='d-b' src='img/movieImg1.png'>
+              <dl>
+                <dt class='text-h'>一条狗的使命</dt>
+                <dd>
+                  <div class='starBox p-r d-b f-l'>
+                    <div class='bg d-b p-a'></div>
+                    <div class="num d-b p-a" style='width:71%'></div>
+                    <div class='grayBg'></div>
+                  </div>
+                  <div class='gradeNum d-b f-l'>7.1</div>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='moreTitle d-b'>
+        <div class='text d-b f-l'>附近影院</div>
+        <a href='#' class='d-b f-r'>
+          更多<span class='d-ib'></span>
+        </a>
+      </div>
+      <div class='moviePlace'>
+        <div class="box">
+          <dl>
+            <dt>万达国际影城（南海万达广场）</dt>
+            <dd class='clear'>
+              <div class='d-b f-l'>
+                佛上市南海区桂澜北路28号南海万达广场
+              </div>
+              <span class='d-b f-r ta-r'>1.4km</span>
+            </dd>
+          </dl>
+        </div>
+        <div class="box">
+          <dl>
+            <dt>万达国际影城（南海万达广场）</dt>
+            <dd class='clear'>
+              <div class='d-b f-l'>
+                佛上市南海区桂澜北路28号南海万达广场
+              </div>
+              <span class='d-b f-r ta-r'>1.4km</span>
+            </dd>
+          </dl>
+        </div>
+        <div class="box">
+          <dl>
+            <dt>万达国际影城（南海万达广场）</dt>
+            <dd class='clear'>
+              <div class='d-b f-l'>
+                佛上市南海区桂澜北路28号南海万达广场
+              </div>
+              <span class='d-b f-r ta-r'>1.4km</span>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class='loadingIcon nd-b'></div>
+      <div class='noThing nd-b ta-c'>没有更多了</div>
+    </div>
+
+    <div id='footer' class='d-b p-f'>
+      <a href='#' class='d-b f-l ta-c active'>
+        <span class='img img1 d-b'></span>
+        <div class='ta-c'>发现</div>
+      </a>
+      <a href='#' class='d-b f-l ta-c'>
+        <span class='img img2 d-b'></span>
+        <div class='ta-c'>电影</div>
+      </a>
+      <a href='#' class='d-b f-l ta-c'>
+        <span class='img img3 d-b'></span>
+        <div class='ta-c'>影院</div>
+      </a>
+      <a href='#' class='d-b f-l ta-c'>
+        <span class='img img4 d-b'></span>
+        <div class='ta-c'>订单</div>
+      </a>
+    </div>
+  </div>
+
+  <div id='myModal' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          <p>One fine body&hellip;</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+    <script src='public/jquery/jquery-1.12.4.min.js'></script>
+    <script src='public/bootstrap/js/bootstrap.min.js'></script>
+    <script>
+      $(function(){
+        $(window).resize(function() {
+        //当页面宽度变化时
+          (function IsPC() {
+          //判断是 移动端 还是 PC
+            for (var userAgentInfo = navigator.userAgent, Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"], flag = !0, v = 0; v < Agents.length; v++)
+              if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                console.log('移动');
+
+                document.getElementsByTagName('html')[0].style.fontSize=window.screen.width/5+'px';
+                //body字体大小为页面宽度除以 10
+
+                return
+              }
+            console.log('PC');
+
+            document.getElementsByTagName('html')[0].style.fontSize=75+'px';
+            /*
+              设置页面 html 文字根字号大小为37.5，为了让 less 好计算
+              这样 less 里的数值是多少就是多少 px了
+            */
+
+            return
+          })();
+        });
+
+      });
+    </script>
+
+    <script src='public/swiper/js/swiper.min.js'></script>
+    <script src='js/index.js?rev=d3d1679babdc01c6b44bb23dc00e31f0'></script>
+    <script>
+      $(function(){
+        js_.index();
+      });
+    </script>
+</body>
+</html>

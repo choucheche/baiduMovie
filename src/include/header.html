@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script>
+      /*
+      (function(){var b=navigator.userAgent;ipad=b.match(/(iPad).*OS\s([\d_]+)/)?true:false;iphone=!ipad&&b.match(/(iPhone\sOS)\s([\d_]+)/)?true:false;uc=navigator.userAgent.indexOf("UCBrowser")>-1?true:false;ios=ipad||iphone;var d=1,a=1,c;if(ios){if(window.devicePixelRatio>=2){d*=0.5;a*=2}}else{if(uc){if(window.devicePixelRatio>=2){d*=0.5;a*=2}}}c='<meta name="viewport" content="initial-scale='+d+", maximum-scale="+d+", minimum-scale="+d+', width=device-width, user-scalable=no" />';document.write(c);document.documentElement.style.fontSize=20*a+"px"})();
+      */
+      // 自动生成meta标签，安卓下是1倍，苹果下是0.5倍
+
+      //这里老师没有用动态 meta
+    </script>
+    <script>
+      //(function(doc,win){var docEl=doc.documentElement,resizeEvt='orientationchange'in window?'orientationchange':'resize',recalc=function(){var clientWidth=docEl.clientWidth;if(!clientWidth)return;console.log(clientWidth);if(clientWidth>=750){docEl.style.fontSize='100px'}else{docEl.style.fontSize=100*(clientWidth/750)+'px'}};if(!doc.addEventListener)return;win.addEventListener(resizeEvt,recalc,false);doc.addEventListener('DOMContentLoaded',recalc,false)})(document,window);
+      //!(function(doc,win){var docEle=doc.documentElement,evt="onorientationchange"in window?"orientationchange":"resize",fn=function(){var width=docEle.clientWidth;console.log(width);if(width>=750){width&&(docEle.style.fontSize=100+"px")}else{width&&(docEle.style.fontSize=20*(width/150)+"px")}};win.addEventListener(evt,fn,false);doc.addEventListener("DOMContentLoaded",fn,false)}(document,window));
+      // 自动根据浏览器宽度修改html的 font-size
+
+      //document.getElementsByTagName('html')[0].style.fontSize=window.screen.width/10+'px';
+      //body字体大小为页面宽度除以 10
+
+    </script>
+    <script>
+      (function IsPC() {
+        for (var userAgentInfo = navigator.userAgent, Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"], flag = !0, v = 0; v < Agents.length; v++)
+          if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            console.log('移动');
+
+            document.getElementsByTagName('html')[0].style.fontSize=window.screen.width/5+'px';
+            //body字体大小为页面宽度除以 10
+
+            return
+          }
+        console.log('PC');
+
+        document.getElementsByTagName('html')[0].style.fontSize=75+'px';
+        /*
+          设置页面 html 文字根字号大小为37.5，为了让 less 好计算
+          这样 less 里的数值是多少就是多少 px了
+        */
+        return
+      })();
+      // 判断浏览器是手机还是PC
+    </script>
+    <link type='text/css' rel='stylesheet' href='public/bootstrap/css/bootstrap.min.css'>
