@@ -34,6 +34,7 @@
     .w(450);
     .h(60);
     background:@defaultColor;
+
     input{
       background-color:@bodyBgColor;
       .b-r(6);
@@ -47,6 +48,13 @@
       background-repeat: no-repeat;
       .f-s(26);
       color:@textColor;
+    }
+    &.searchBoxLong{
+      .ml(48);
+      .w(540);
+      input{
+        .w(540);
+      }
     }
   }
   .cityBtn{

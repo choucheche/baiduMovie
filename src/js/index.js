@@ -740,8 +740,8 @@ var js_ = {
             var index = $(this).index();
             $('.film_paly ul li').removeClass('play_li_active');
             $(this).addClass('play_li_active');
-            $('.film_paly_content div').hide();
-            $('.film_paly_content div:eq(' + index + ')').fadeIn();
+            $('.film_paly_content div.divWrap').hide();
+            $('.film_paly_content div.divWrap:eq(' + index + ')').fadeIn();
         });
     },
     search_cinema: function() {
