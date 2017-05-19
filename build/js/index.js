@@ -736,13 +736,307 @@ var js_ = {
     },
     film_list: function() {
         $('title').html('电影列表');
-        $('.film_paly ul li').click(function() {
-            var index = $(this).index();
-            $('.film_paly ul li').removeClass('play_li_active');
-            $(this).addClass('play_li_active');
-            $('.film_paly_content div.divWrap').hide();
-            $('.film_paly_content div.divWrap:eq(' + index + ')').fadeIn();
-        });
+
+        var html_body = $('html,body');
+        var loadingA = $('.shadow,.loadIcon');
+        var noThing = $('.noThing');
+        var loadingIcon = $('.loadingIcon');
+
+        var windowHeight = $(window).height();
+        //屏幕高度
+        var timeOk = true;
+        //为 true 时，上一组数据已经加载完成，可以继续加载下一组数据
+        var dataNum = [];
+        //list里的 box 数据都放在这里
+        var scrollOver;
+        //判断是否还需要加载数据
+        var defaultNum;
+        //默认加载几个数据，去拿 html里导航 li 标签上的 data-index 属性值
+        var loadData;
+        //每次加载几个数据，可以给每个列表不同的值
+        var listBox;
+        //当前显示的数据列表是哪个 list
+        var tabName = 'now';
+        //当前切换的 tab 名，默认为第一个导航
+        var index = 0;
+        //表示加载到第几个
+        var loadEndNum;
+        //每次加载后，list 的最后一组索引值
+
+        var nowData = [
+        //正在热映电影列表
+          {'id':'1','num':'1'},
+          {'id':'2','num':'2'},
+          {'id':'3','num':'3'},
+          {'id':'4','num':'4'},
+          {'id':'5','num':'5'},
+          {'id':'6','num':'6'},
+          {'id':'7','num':'7'},
+          {'id':'8','num':'8'},
+          {'id':'9','num':'9'},
+          {'id':'10','num':'10'},
+          {'id':'11','num':'11'},
+          {'id':'12','num':'12'},
+          {'id':'13','num':'13'},
+          {'id':'14','num':'14'},
+          {'id':'15','num':'15'},
+          {'id':'16','num':'16'},
+          {'id':'17','num':'17'},
+          {'id':'18','num':'18'},
+          {'id':'19','num':'19'},
+          {'id':'20','num':'20'}];
+
+        var laterData = [
+        //即将上映电影列表
+          {'id':'21','num':'21'},
+          {'id':'22','num':'22'},
+          {'id':'23','num':'23'},
+          {'id':'24','num':'24'},
+          {'id':'25','num':'25'},
+          {'id':'26','num':'26'},
+          {'id':'27','num':'27'},
+          {'id':'28','num':'28'},
+          {'id':'29','num':'29'},
+          {'id':'30','num':'30'},
+          {'id':'31','num':'31'},
+          {'id':'32','num':'32'},
+          {'id':'33','num':'33'},
+          {'id':'34','num':'34'},
+          {'id':'35','num':'35'},
+          {'id':'36','num':'36'},
+          {'id':'37','num':'37'},
+          {'id':'38','num':'38'},
+          {'id':'39','num':'39'},
+          {'id':'40','num':'40'}];
+
+        //先给 nowData 和 laterData 数据值，后运行 getData('now')  
+        getData('now');
+        //默认页面获取数据列表 now 的值，相当于获得不同的 ajax 数据列表
+
+        function getData(dataClass) {
+        //获取 或 切换 需要加载的数据
+          switch (dataClass) {
+              case 'now':
+              //获得数据列表 now 的数据，相当于获得 ajax 数据列表
+                dataNum = nowData;
+                //console.log(dataNum[0].id);
+                //获取 dataNum 数据列表里第一个值的 id
+
+                //console.log(dataNum.length);
+                //dataNum 数据有几组
+
+                loadData = 5;
+                //每次加载几组数据
+
+                break;
+
+              case 'later':
+              //获得数据列表 later 的数据，相当于获得 ajax 数据列表
+                dataNum = laterData;
+                //console.log(dataNum[0].id);
+                //获取 dataNum 数据列表里第一个值的 id
+
+                //console.log(dataNum.length);
+                //dataNum 数据有几组
+
+                loadData = 3;
+                //每次加载几组数据
+
+                break;
+          }
+          defaultNum = $('#filmNav li[data-name='+dataClass+']').attr('data-index');
+          //默认显示数据数
+          //console.log(defaultNum);
+          index = $('#filmNav li[data-name='+dataClass+']').attr('data-index');
+          //开始算加载的数据
+
+          if (dataNum.length > defaultNum) {
+              //如果数据列表的组数，大于默认加载的数量，那么可以继续加载数据
+              scrollOver = true;
+              //可以继续加载数据
+          } else {
+              scrollOver = false;
+              //不可以继续加载数据
+              defaultNum = dataNum.length;
+              //默认加载数量，等于 ajax 传来的数量
+              $('#filmNav li[data-name='+dataClass+']').attr('data-index',dataNum.length);
+          }
+          listBox = $('.divWrap[data-listName=' + dataClass + ']');
+          //获得和 tab 相应的 list
+          listBox.show().siblings().hide();
+          //只有相应的 list 显示
+          getDefault();
+          //在 list 写入默认数据组（不包含需要加载的数据组）
+          //console.log('scrollOver:'+scrollOver);
+          tabData();
+        }
+
+        function loadingAnimate() {
+          html_body.stop(true, true).animate({
+              scrollTop: (0)
+          }, 10);
+          //页面返回到顶部
+          loadingA.show();
+          //显示加载动画
+
+          $('body').css({
+              'height': windowHeight,
+              'overflow': 'hidden'
+          });
+          //body 设置无法滚动
+
+          var t = setTimeout(function() {
+            loadingA.hide();
+            //加载动画消失
+            $('body').css({
+                'height': 'auto',
+                'overflow': 'auto'
+            });
+            //body 设置可以滚动
+          }, 2000);
+        }
+        function tabData() {
+          //点击上面的 tab 切换数据列表
+          $('#filmNav li').bind('click', function() {
+            var filmNavIndex = $(this).index();
+            //获取点击的 tab
+
+            if(timeOk===true){
+            //只有在不记载数据的情况下可以点，不然数据会串行
+
+              $('#filmNav li').removeClass('play_li_active');
+              $('#filmNav li').eq(filmNavIndex).addClass('play_li_active');
+              //导航加选中样式
+
+              timeOk = false;
+              loadingAnimate();
+              //正在加载中动画启动
+
+              $('.loadingIcon,.noThing').hide();
+
+              tabName = $(this).attr('data-name');
+              //获取当前选中的导航 tab 名
+              //console.log(tabName);
+
+              var t = setTimeout(function() {
+              //2秒加载时间
+                  getData(tabName);
+                  //获得切换到的 数据列表，相当于切换 ajax 数据
+                  timeOk = true;
+                  //可以再次进行加载了
+              }, 2000);
+            }
+          });
+        }
+
+        function getDefault() {
+        //获取默认数据
+
+            html_body.stop(true, true).animate({
+                scrollTop: (0)
+            }, 10);
+
+            listBox.html('');
+            //清空列表
+
+            switch (tabName) {
+            //对不同 list 添加不同写法的 数据 写法
+                case 'now':
+                  for (var i = 0; i < defaultNum; i++) {
+                  //写入默认数量的 box
+                      listBox.append('<ol><li><a href="javascript:;"class="clearfix"><span class="f-l"><img src="img/film_list01.png"alt=""></span><em class="f-l"><h2 class="clear"><span class="movieName">驯龙高手'+dataNum[i].id+'</span><i>3D</i></h2><strong><div class="starBox"><div class="starImg starImg1" style="width:50%;"></div><div class="starImg starImg2"></div></div><div class="gradeNum">5.0</div></strong><p class="paly_content_p">导演：迪恩·德布洛斯</p><p>主演：杰伊·巴鲁切尔，艾米莉卡·费雷拉</p></em></a></li></ol>');
+                  }
+                  break;
+                case 'later':
+                  for (var j = 0; j < defaultNum; j++) {
+                      listBox.append('<ol><li><a href="javascript:;"class="clearfix"><span class="f-l"><img src="img/film_list02.png"alt=""></span><em class="f-l"><h2 class="clear"><span class="movieName">金刚狼3:殊死一战'+dataNum[j].id+'</span><i>IMAX 3D</i></h2><strong><div class="starBox"><div class="starImg starImg1" style="width:60%;"></div><div class="starImg starImg2"></div></div><div class="gradeNum">6.0</div></strong><p class="paly_content_p">导演：迪恩·德布洛斯</p><p>主演：杰伊·巴鲁切尔，艾米莉卡·费雷拉</p></em></a></li></ol>');
+                  }
+                  break;
+            }
+            slideLoad();
+        }
+        function slideLoad() {
+        //滚动加载
+          $(window).scroll(function() {
+            var lastBoxBottom = parseFloat(listBox.children("ol:last-child").offset().top) + parseFloat(listBox.children('ol').height());
+            //最后一个影院底部距离
+            //console.log(lastBoxBottom);
+
+            var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            //页面滚动距离
+            //console.log('scrollOver'+scrollOver);
+
+            var thisTabIndex = Number($('#filmNav li[data-name='+tabName+']').attr('data-index'));
+            //获得当前数据加载到索引几
+
+            if(thisTabIndex>=dataNum.length){
+            //如果当前加载的索引值大于数据个数
+              noThing.show();
+              //提示用户已经到底部了
+              scrollOver=false;
+            } else {
+              noThing.hide();
+              scrollOver=true;
+            }
+
+            if (lastBoxBottom < scrollTop + windowHeight && scrollOver && timeOk) {
+            //如果 最后一个影院位置距离小于 页面滚动距离 + 屏幕设备高度 并且 可以继续加载 并且 上一组影院加载完成
+              //console.log('加载数据');
+              timeOk = false;
+              //数据还没有加载完成
+
+              if (index < dataNum.length) {
+                //判断影院一维数组，如果影院还能继续加载，就显示 loading
+                loadingIcon.show();
+              }
+
+              loadEndNum = thisTabIndex + loadData;
+              //获得这次加载后，得到的加载到索引值多少
+              //console.log(loadData);
+              if (loadEndNum > dataNum.length) {
+              //如果加载的索引值大于ajax数据个数
+                //console.log(loadEndNum);
+                loadEndNum = dataNum.length;
+              }
+              //console.log('loadEndNum,'+loadEndNum);
+
+              var t = setTimeout(function() {
+              //举个例子，就当之前 loading 了 2秒，这里是 loading 结束后
+                loadingIcon.hide();
+                //loading消失
+
+                for (index; index < loadEndNum; index++) {
+                    switch (tabName) {
+                        case 'now':
+
+                          listBox.append('<ol><li><a href="javascript:;"class="clearfix"><span class="f-l"><img src="img/film_list01.png"alt=""></span><em class="f-l"><h2 class="clear"><span class="movieName">驯龙高手'+dataNum[index].id+'</span><i>3D</i></h2><strong><div class="starBox"><div class="starImg starImg1" style="width:50%;"></div><div class="starImg starImg2"></div></div><div class="gradeNum">5.0</div></strong><p class="paly_content_p">导演：迪恩·德布洛斯</p><p>主演：杰伊·巴鲁切尔，艾米莉卡·费雷拉</p></em></a></li></ol>');
+                          break;
+
+                        case 'later':
+
+                          listBox.append('<ol><li><a href="javascript:;"class="clearfix"><span class="f-l"><img src="img/film_list02.png"alt=""></span><em class="f-l"><h2 class="clear"><span class="movieName">金刚狼3:殊死一战'+dataNum[index].id+'</span><i>IMAX 3D</i></h2><strong><div class="starBox"><div class="starImg starImg1" style="width:60%;"></div><div class="starImg starImg2"></div></div><div class="gradeNum">6.0</div></strong><p class="paly_content_p">导演：迪恩·德布洛斯</p><p>主演：杰伊·巴鲁切尔，艾米莉卡·费雷拉</p></em></a></li></ol>');
+                          break;
+
+                    }
+                }
+                timeOk = true;
+                //可以继续加载下一组影院了
+                $('#filmNav li[data-name='+tabName+']').attr('data-index',loadEndNum);
+                //加载完数据后，给列表写入 已加载到什么索引位置
+                //console.log('a,'+loadEndNum);
+              }, 2000);
+              //console.log('index'+index);
+              if (index == dataNum.length) {
+                //如果当前加载的影院一维数组数，等于一维数组最大值
+                scrollOver = false;
+                //所有影院加载完成，不能继续加载影院了
+                noThing.show();
+                //提示用户已经到底部了
+              }
+              //console.log('scrollOver'+scrollOver);
+            }
+          });
+        }
     },
     search_cinema: function() {
         $('body').css('background', '#fff');

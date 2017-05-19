@@ -23,12 +23,13 @@
       </div>
     </div>
     <div class="film_paly">
-       <ul class="clearfix">
-         <li class="f-l ta-c play_li_active">正在热映</li>
-         <li class="f-l ta-c">即将上映</li>
+       <ul class="clearfix" id='filmNav'>
+         <li class="f-l ta-c play_li_active" data-name="now" data-index="10">正在热映</li>
+         <li class="f-l ta-c" data-name="later" data-index="8">即将上映</li>
        </ul>
        <div class="film_paly_content">
-         <div class='divWrap' style="display: block;">
+         <div class='divWrap' data-listName="now" style="display: block;">
+         <!--
            <ol>
              <li>
                 <a href="javascript:;" class="clearfix">
@@ -134,8 +135,10 @@
                 </a>
              </li>
            </ol>
+         -->
          </div>
-         <div class='divWrap'>
+         <div class='divWrap' data-listName="later">
+         <!--
             <ol>
              <li>
                 <a href="javascript:;" class="clearfix">
@@ -178,9 +181,18 @@
                 </a>
              </li>
            </ol>
+         -->
          </div>
        </div>
+
+       <div class='loadingIcon nd-b'></div>
+       <div class='noThing nd-b ta-c'>没有更多了</div>
+
+       <div class='shadow nd-b p-f'></div>
+       <div class='loadIcon nd-b p-f'></div>
+
     </div>
+
 
  </div>
 
